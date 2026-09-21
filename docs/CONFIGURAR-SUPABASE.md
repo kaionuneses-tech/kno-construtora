@@ -18,6 +18,14 @@ Você não precisa saber SQL: é copiar um arquivo e clicar em *Run*.
    - **Name:** `KNO` (ou o nome da empresa)
    - **Type:** `Company`
    - **Plan:** `Free`
+
+   > **Já tem uma organização?** Pode usar a que você já tem, sem problema — organização
+   > é só um agrupamento de cobrança e de membros, e os projetos dentro dela não
+   > compartilham banco, URL nem chaves. Só confira duas coisas: (a) no plano Free, o
+   > limite é de **2 projetos ativos por organização** — se já houver dois, crie uma
+   > organização nova (é grátis); (b) **todo membro da organização enxerga todos os
+   > projetos dela**, inclusive a tabela `leads` com os contatos recebidos pelo site —
+   > se houver sócios ou terceiros nessa org, prefira uma organização separada.
 4. Agora crie o projeto, clicando em **New project**:
 
    | Campo | O que preencher |
