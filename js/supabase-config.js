@@ -23,7 +23,7 @@
    continua funcionando aqui até o Supabase aposentá-la, no fim de 2026.
    ============================================================ */
 
-window.KNO_SUPABASE_URL = "https://SEU-PROJETO.supabase.co";
+window.KNO_SUPABASE_URL = "https://scnocjwrsvfiyrqxxzfj.supabase.co";
 window.KNO_SUPABASE_KEY = "SUA-CHAVE-PUBLISHABLE-AQUI";
 
 /* Bucket do Storage onde ficam as fotos (criado pelo sql/schema.sql) */
