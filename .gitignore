@@ -1,0 +1,26 @@
+# Lixo do Windows / macOS
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.code-workspace
+*~
+~$*
+
+# Temporários e logs
+*.log
+*.tmp
+*.bak
+
+# Caso um dia você baixe as bibliotecas da CDN para rodar offline
+node_modules/
+
+# OBSERVAÇÃO IMPORTANTE
+# js/supabase-config.js NÃO está ignorado de propósito: o site precisa
+# desse arquivo no ar para funcionar, e a chave "anon" do Supabase é
+# pública por design (quem protege os dados é o RLS, em sql/schema.sql).
+# Nunca coloque a chave "service_role" nesse arquivo.

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Imóveis à venda — KNO Construtora e Incorporadora</title>
+<meta name="description" content="Casas e apartamentos à venda da KNO Construtora e Incorporadora. Filtre por tipo, empreendimento, quartos e preço." />
+<meta name="theme-color" content="#0b1225" />
+<link rel="icon" href="assets/logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="nav solid" id="nav" data-sempre-solida="1">
+  <a class="nav-logo" href="index.html" aria-label="KNO — início">
+    <img src="assets/logo.jpg" alt="KNO Construtora e Incorporadora" />
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html#obra">A Obra</a>
+    <a href="imoveis.html">Imóveis</a>
+    <a href="index.html#servicos">Serviços</a>
+    <a href="index.html#projetos">Projetos</a>
+    <a href="index.html#processo">Processo</a>
+    <a href="index.html#contato" class="nav-cta">Fale com a KNO</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main class="page">
+  <div class="wrap">
+
+    <header class="page-head">
+      <div>
+        <p class="eyebrow">Portfólio à venda</p>
+        <h1>Imóveis KNO</h1>
+        <p class="sec-sub">Cada unidade abaixo foi construída pela KNO — do terreno ao acabamento, com o mesmo padrão que você acompanhou na página inicial.</p>
+      </div>
+      <a href="index.html" class="voltar">Voltar para a home</a>
+    </header>
+
+    <form class="filtros" id="filtros" autocomplete="off">
+      <div class="field">
+        <label for="fBusca">Buscar</label>
+        <input type="search" id="fBusca" placeholder="Título, bairro, empreendimento..." />
+      </div>
+      <div class="field">
+        <label for="fTipo">Tipo</label>
+        <select id="fTipo">
+          <option value="">Todos</option>
+          <option value="casa">Casa</option>
+          <option value="apartamento">Apartamento</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fEmp">Empreendimento</label>
+        <select id="fEmp"><option value="">Todos</option></select>
+      </div>
+      <div class="field">
+        <label for="fQuartos">Quartos</label>
+        <select id="fQuartos">
+          <option value="">Qualquer</option>
+          <option value="1">1 ou mais</option>
+          <option value="2">2 ou mais</option>
+          <option value="3">3 ou mais</option>
+          <option value="4">4 ou mais</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fPreco">Preço até</label>
+        <select id="fPreco">
+          <option value="">Qualquer</option>
+          <option value="300000">R$ 300 mil</option>
+          <option value="500000">R$ 500 mil</option>
+          <option value="800000">R$ 800 mil</option>
+          <option value="1200000">R$ 1,2 milhão</option>
+          <option value="2000000">R$ 2 milhões</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fStatus">Situação</label>
+        <select id="fStatus">
+          <option value="ativos">Disponíveis e reservados</option>
+          <option value="disponivel">Só disponíveis</option>
+          <option value="reservado">Só reservados</option>
+          <option value="vendido">Vendidos</option>
+          <option value="">Todos</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="fOrdem">Ordenar por</label>
+        <select id="fOrdem">
+          <option value="recentes">Mais recentes</option>
+          <option value="preco_asc">Menor preço</option>
+          <option value="preco_desc">Maior preço</option>
+          <option value="area_desc">Maior área</option>
+        </select>
+      </div>
+      <button type="button" class="btn-limpar" id="fLimpar">Limpar filtros</button>
+    </form>
+
+    <p class="resultado-info" id="resultadoInfo">Carregando imóveis…</p>
+
+    <div class="uni-grid" id="lista">
+      <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="assets/logo.jpg" alt="KNO Construtora e Incorporadora" class="footer-logo" />
+      <p>Engenharia, incorporação e execução de obras com padrão de acabamento e prazo cumprido.</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <a href="index.html#obra">A Obra</a><a href="imoveis.html">Imóveis</a><a href="index.html#servicos">Serviços</a><a href="index.html#processo">Processo</a>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <a href="tel:+5500000000000">(00) 00000-0000</a>
+      <a href="mailto:contato@knoconstrutora.com.br">contato@knoconstrutora.com.br</a>
+      <a href="index.html#contato">Solicitar orçamento</a>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© <span id="year">2026</span> KNO Construtora e Incorporadora. Todos os direitos reservados.</span>
+    <span>CNPJ 00.000.000/0001-00 · CREA 000000</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/catalogo.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/imoveis.js"></script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>KNO — Construtora e Incorporadora</title>
+<meta name="description" content="KNO Construtora e Incorporadora. Da fundação ao acabamento, construímos obras que duram. Acompanhe cada etapa da construção." />
+<meta name="theme-color" content="#0b1225" />
+<link rel="icon" href="assets/logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ PRELOADER ============ -->
+<div id="preloader" aria-hidden="true">
+  <div class="pre-inner">
+    <img src="assets/logo.jpg" alt="" class="pre-logo" />
+    <div class="pre-bar"><span id="preBar"></span></div>
+    <div class="pre-text">preparando o canteiro de obras</div>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="nav-logo" href="#top" aria-label="KNO — início">
+    <img src="assets/logo.jpg" alt="KNO Construtora e Incorporadora" />
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="#obra">A Obra</a>
+    <a href="imoveis.html">Imóveis</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#processo">Processo</a>
+    <a href="#contato" class="nav-cta">Fale com a KNO</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<div class="scroll-progress"><i id="scrollBar"></i></div>
+
+<!-- ============ PALCO 3D (fixo durante toda a jornada) ============ -->
+<div id="stage" aria-hidden="true">
+  <canvas id="scene"></canvas>
+  <div id="stageFallback" class="stage-fallback" hidden>
+    <img src="assets/logo.jpg" alt="KNO" />
+    <p>Seu navegador não suporta WebGL. A experiência 3D foi desativada,<br />mas todo o conteúdo do site continua disponível.</p>
+  </div>
+  <div class="stage-vignette"></div>
+</div>
+
+<main id="top">
+
+  <!-- ============ JORNADA: HERO + CONSTRUÇÃO ============ -->
+  <div id="journey">
+
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow reveal">Construtora e Incorporadora</p>
+        <h1 class="reveal delay-1">
+          Nós não entregamos<br /><em>obras</em>. Entregamos<br /><span class="grad">o que fica de pé.</span>
+        </h1>
+        <p class="hero-sub reveal delay-2">
+          Role a página e acompanhe, do terreno ao acabamento,
+          o mesmo rigor que a KNO aplica em cada metro quadrado.
+        </p>
+        <div class="hero-actions reveal delay-3">
+          <a href="#contato" class="btn btn-gold">Solicitar orçamento</a>
+          <a href="#projetos" class="btn btn-ghost">Ver projetos</a>
+        </div>
+      </div>
+      <div class="scroll-hint reveal delay-4">
+        <span>role para construir</span>
+        <i></i>
+      </div>
+    </section>
+
+    <!-- Container que define o comprimento do scroll da animação -->
+    <section id="obra" class="build">
+      <div class="build-sticky">
+        <div class="build-ui">
+
+          <div class="captions" id="captions">
+            <article class="caption is-active" data-step="0">
+              <span class="caption-num">01</span>
+              <h2>O terreno</h2>
+              <p>Topografia, sondagem do solo e estudo de implantação. Antes de qualquer concreto, a KNO entende o lugar — insolação, ventilação, recuos e o melhor aproveitamento do lote.</p>
+            </article>
+            <article class="caption" data-step="1">
+              <span class="caption-num">02</span>
+              <h2>Fundação</h2>
+              <p>Sapatas dimensionadas por cálculo estrutural, armadura conferida peça a peça e concreto com controle tecnológico. O que ninguém vê é o que sustenta tudo.</p>
+            </article>
+            <article class="caption" data-step="2">
+              <span class="caption-num">03</span>
+              <h2>Estrutura</h2>
+              <p>Pilares, vigas e lajes formam o esqueleto da casa. Prumo, esquadro e nível verificados a cada etapa — é aqui que a obra ganha precisão milimétrica.</p>
+            </article>
+            <article class="caption" data-step="3">
+              <span class="caption-num">04</span>
+              <h2>Alvenaria</h2>
+              <p>Blocos assentados com amarração correta, vãos no lugar certo e instalações previstas no projeto. Nada de quebra-quebra depois: tudo compatibilizado antes.</p>
+            </article>
+            <article class="caption" data-step="4">
+              <span class="caption-num">05</span>
+              <h2>Cobertura</h2>
+              <p>Laje de cobertura, impermeabilização e beirais que protegem a fachada. Uma casa bem coberta é uma casa que envelhece bem.</p>
+            </article>
+            <article class="caption" data-step="5">
+              <span class="caption-num">06</span>
+              <h2>Esquadrias</h2>
+              <p>Caixilhos de alumínio, vidros de alto desempenho e portas alinhadas ao milímetro. A luz entra, o calor e o ruído ficam do lado de fora.</p>
+            </article>
+            <article class="caption" data-step="6">
+              <span class="caption-num">07</span>
+              <h2>Acabamento</h2>
+              <p>Reboco, pintura, brises em dourado, paisagismo e iluminação. O detalhe que transforma uma construção em um endereço.</p>
+            </article>
+            <article class="caption" data-step="7">
+              <span class="caption-num">08</span>
+              <h2>Entrega</h2>
+              <p>Vistoria final, manual do proprietário e chaves na mão — no prazo combinado. É assim que a KNO termina toda obra que começa.</p>
+            </article>
+          </div>
+
+          <ol class="rail" id="rail">
+            <li data-step="0"><i></i><span>Terreno</span></li>
+            <li data-step="1"><i></i><span>Fundação</span></li>
+            <li data-step="2"><i></i><span>Estrutura</span></li>
+            <li data-step="3"><i></i><span>Alvenaria</span></li>
+            <li data-step="4"><i></i><span>Cobertura</span></li>
+            <li data-step="5"><i></i><span>Esquadrias</span></li>
+            <li data-step="6"><i></i><span>Acabamento</span></li>
+            <li data-step="7"><i></i><span>Entrega</span></li>
+          </ol>
+
+          <div class="build-meta">
+            <div class="meta-item"><b id="metaPct">0%</b><span>da obra</span></div>
+            <div class="meta-item"><b id="metaStage">Terreno</b><span>etapa atual</span></div>
+          </div>
+
+        </div>
+      </div>
+      <!-- Espaçadores que dão comprimento ao scroll (1 por etapa) -->
+      <div class="build-spacer"></div>
+      <div class="build-spacer"></div>
+      <div class="build-spacer"></div>
+      <div class="build-spacer"></div>
+      <div class="build-spacer"></div>
+      <div class="build-spacer"></div>
+      <div class="build-spacer"></div>
+      <div class="build-spacer"></div>
+    </section>
+  </div>
+
+  <!-- ============ NÚMEROS ============ -->
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat reveal"><b class="count" data-to="18" data-suffix="+">0</b><span>anos de mercado</span></div>
+      <div class="stat reveal delay-1"><b class="count" data-to="240" data-suffix="mil m²">0</b><span>construídos</span></div>
+      <div class="stat reveal delay-2"><b class="count" data-to="63">0</b><span>obras entregues</span></div>
+      <div class="stat reveal delay-3"><b class="count" data-to="100" data-suffix="%">0</b><span>no prazo contratado</span></div>
+    </div>
+  </section>
+
+  <!-- ============ DESTAQUES (vem do Supabase; some se não houver nenhum) ============ -->
+  <section id="destaques" class="section destaques" hidden>
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">À venda</p>
+        <h2>Imóveis em destaque</h2>
+        <p class="sec-sub">Unidades prontas para visita, selecionadas pela equipe da KNO.</p>
+      </header>
+      <div class="uni-grid reveal" id="destaquesGrid"></div>
+      <div class="destaques-cta reveal">
+        <a href="imoveis.html" class="btn btn-ghost">Ver todos os imóveis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section id="servicos" class="section">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">O que fazemos</p>
+        <h2>Da viabilidade à entrega das chaves</h2>
+        <p class="sec-sub">Uma estrutura completa de engenharia, incorporação e gestão de obra — com um único responsável do começo ao fim.</p>
+      </header>
+
+      <div class="cards">
+        <article class="card reveal">
+          <div class="card-ico">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40h36M10 40V20l14-10 14 10v20M19 40V28h10v12"/></svg>
+          </div>
+          <h3>Construção residencial</h3>
+          <p>Casas de alto padrão e condomínios, executados com projeto compatibilizado e cronograma físico-financeiro auditado semanalmente.</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="card-ico">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 42V10h16v32M24 42V22h16v20M13 18h6M13 26h6M13 34h6M29 30h6M29 37h6"/></svg>
+          </div>
+          <h3>Incorporação imobiliária</h3>
+          <p>Prospecção de terrenos, estudo de viabilidade, aprovação legal, registro de incorporação e lançamento — com segurança jurídica.</p>
+        </article>
+        <article class="card reveal delay-2">
+          <div class="card-ico">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l16 9v18l-16 9-16-9V15z"/><path d="M24 24l16-9M24 24v18M24 24L8 15"/></svg>
+          </div>
+          <h3>Obras corporativas</h3>
+          <p>Galpões, clínicas, lojas e retrofit comercial. Execução em ambiente operante, com plano de interferência e segurança do trabalho.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card-ico">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38h28M14 38V16l10-8 10 8v22"/><path d="M6 20L24 6l18 14"/></svg>
+          </div>
+          <h3>Projetos e engenharia</h3>
+          <p>Arquitetura, estrutural, hidrossanitário, elétrico e climatização em BIM, com detecção de interferências antes da primeira escavação.</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="card-ico">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 14v10l7 5"/></svg>
+          </div>
+          <h3>Gerenciamento de obra</h3>
+          <p>Para quem já tem projeto: assumimos prazo, custo e qualidade, com relatórios de medição e diário de obra digital.</p>
+        </article>
+        <article class="card reveal delay-2">
+          <div class="card-ico">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 42V18l12-10 12 10v24z"/><path d="M20 42V30h8v12M20 22h8"/></svg>
+          </div>
+          <h3>Reformas de alto padrão</h3>
+          <p>Retrofit completo com mínima interferência na rotina, cuidado com o patrimônio existente e acabamento impecável.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJETOS ============ -->
+  <section id="projetos" class="section section-alt">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">Portfólio</p>
+        <h2>Obras que já têm endereço</h2>
+        <p class="sec-sub">Uma amostra do que a KNO entregou nos últimos anos. Substitua as artes abaixo pelas fotos reais das suas obras.</p>
+      </header>
+
+      <div class="projects">
+        <article class="proj reveal">
+          <div class="proj-art art-1">
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect x="40" y="120" width="90" height="180"/><rect x="145" y="70" width="70" height="230"/>
+              <rect x="230" y="150" width="60" height="150"/><rect x="305" y="100" width="60" height="200"/>
+              <path d="M0 300h400" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="proj-info">
+            <span class="tag">Residencial</span>
+            <h3>Residencial Aurora</h3>
+            <p>1.980 m² · 14 unidades · Entregue em 2024</p>
+          </div>
+        </article>
+        <article class="proj reveal delay-1">
+          <div class="proj-art art-2">
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <path d="M60 300V150l120-70 120 70v150"/><rect x="150" y="210" width="60" height="90"/>
+              <path d="M20 150L180 55l180 95" /><path d="M0 300h400" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="proj-info">
+            <span class="tag">Casa</span>
+            <h3>Casa Ventura</h3>
+            <p>640 m² · Alto padrão · Entregue em 2023</p>
+          </div>
+        </article>
+        <article class="proj reveal delay-2">
+          <div class="proj-art art-3">
+            <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect x="50" y="110" width="300" height="190"/><path d="M50 110l150-60 150 60"/>
+              <path d="M110 300v-90h60v90M230 300v-90h60v90M0 300h400" stroke-width="3"/>
+            </svg>
+          </div>
+          <div class="proj-info">
+            <span class="tag">Corporativo</span>
+            <h3>Centro Logístico KN</h3>
+            <p>7.400 m² · Galpão modular · Entregue em 2025</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESSO ============ -->
+  <section id="processo" class="section">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">Como trabalhamos</p>
+        <h2>Quatro passos, zero surpresas</h2>
+      </header>
+      <ol class="timeline">
+        <li class="reveal"><b>01</b><h3>Diagnóstico</h3><p>Entendemos o terreno, o programa de necessidades e o orçamento disponível. Você recebe um estudo de viabilidade honesto — inclusive quando a resposta é “ainda não”.</p></li>
+        <li class="reveal delay-1"><b>02</b><h3>Projeto e orçamento</h3><p>Projetos compatibilizados e planilha aberta, com memorial descritivo detalhado. Preço fechado, sem letras miúdas.</p></li>
+        <li class="reveal delay-2"><b>03</b><h3>Execução</h3><p>Equipe própria, cronograma público e relatório fotográfico semanal. Você acompanha a obra mesmo sem pisar no canteiro.</p></li>
+        <li class="reveal delay-3"><b>04</b><h3>Entrega e pós-obra</h3><p>Vistoria assistida, manual do proprietário e 5 anos de garantia estrutural conforme norma.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <section id="contato" class="section section-contact">
+    <div class="wrap contact-grid">
+      <div class="contact-copy reveal">
+        <p class="eyebrow">Vamos construir</p>
+        <h2>Conte o seu projeto<br />para a KNO</h2>
+        <p class="sec-sub">Responderemos em até 1 dia útil com os próximos passos e uma estimativa inicial de prazo e investimento.</p>
+        <ul class="contact-list">
+          <li><span>Telefone</span><a href="tel:+5500000000000">(00) 00000-0000</a></li>
+          <li><span>E-mail</span><a href="mailto:contato@knoconstrutora.com.br">contato@knoconstrutora.com.br</a></li>
+          <li><span>Escritório</span><p>Rua Exemplo, 000 — Centro<br />Sua Cidade / UF</p></li>
+        </ul>
+      </div>
+
+      <form class="contact-form reveal delay-1" id="contactForm" novalidate>
+        <div class="field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" required placeholder="Como podemos te chamar?" />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required placeholder="voce@email.com" />
+          </div>
+          <div class="field">
+            <label for="fone">WhatsApp</label>
+            <input id="fone" name="fone" type="tel" placeholder="(00) 00000-0000" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="tipo">Tipo de obra</label>
+          <select id="tipo" name="tipo">
+            <option>Casa residencial</option>
+            <option>Prédio / incorporação</option>
+            <option>Obra corporativa</option>
+            <option>Reforma / retrofit</option>
+            <option>Ainda não sei</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="msg">Mensagem</label>
+          <textarea id="msg" name="msg" rows="4" placeholder="Terreno, metragem, prazo desejado..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">Enviar mensagem</button>
+        <p class="form-note" id="formNote">Ao enviar, abrimos seu aplicativo de e-mail com a mensagem pronta.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <img src="assets/logo.jpg" alt="KNO Construtora e Incorporadora" class="footer-logo" />
+      <p>Engenharia, incorporação e execução de obras com padrão de acabamento e prazo cumprido.</p>
+    </div>
+    <div>
+      <h4>Navegação</h4>
+      <a href="#obra">A Obra</a><a href="imoveis.html">Imóveis</a><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#processo">Processo</a>
+    </div>
+    <div>
+      <h4>Contato</h4>
+      <a href="tel:+5500000000000">(00) 00000-0000</a>
+      <a href="mailto:contato@knoconstrutora.com.br">contato@knoconstrutora.com.br</a>
+      <a href="#contato">Solicitar orçamento</a>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <span>© <span id="year">2026</span> KNO Construtora e Incorporadora. Todos os direitos reservados.</span>
+    <span>CNPJ 00.000.000/0001-00 · CREA 000000</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/catalogo.js"></script>
+<script src="js/ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.157.0/build/three.min.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

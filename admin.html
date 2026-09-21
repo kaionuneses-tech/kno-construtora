@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Painel — KNO Construtora e Incorporadora</title>
+<meta name="robots" content="noindex, nofollow" />
+<meta name="theme-color" content="#0b1225" />
+<link rel="icon" href="assets/logo.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="nav solid" id="nav" data-sempre-solida="1">
+  <a class="nav-logo" href="index.html" aria-label="KNO — início">
+    <img src="assets/logo.jpg" alt="KNO Construtora e Incorporadora" />
+  </a>
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html">Ver site</a>
+    <a href="imoveis.html">Imóveis</a>
+    <a href="#" id="btnSair" class="nav-cta" hidden>Sair</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</header>
+
+<main class="page">
+  <div class="wrap">
+
+    <!-- ============ LOGIN ============ -->
+    <section id="login">
+      <form class="login-card" id="formLogin" autocomplete="on">
+        <h1>Painel KNO</h1>
+        <p class="hint">Acesso restrito à equipe. Use o e-mail cadastrado no Supabase.</p>
+        <div class="field">
+          <label for="lEmail">E-mail</label>
+          <input id="lEmail" type="email" required autocomplete="username" placeholder="voce@knoconstrutora.com.br" />
+        </div>
+        <div class="field">
+          <label for="lSenha">Senha</label>
+          <input id="lSenha" type="password" required autocomplete="current-password" placeholder="••••••••" />
+        </div>
+        <button type="submit" class="btn btn-gold btn-block">Entrar</button>
+        <p class="form-note" id="loginNota"></p>
+      </form>
+    </section>
+
+    <!-- ============ PAINEL ============ -->
+    <section id="painel" hidden>
+      <div class="admin-top">
+        <div>
+          <p class="eyebrow" style="margin-bottom:10px">Área administrativa</p>
+          <h1 style="font-size:clamp(26px,3.4vw,40px);font-weight:300">Catálogo de imóveis</h1>
+        </div>
+        <p class="admin-user">Conectado como <b id="quemSou">—</b></p>
+      </div>
+
+      <div class="tabs" role="tablist">
+        <button class="tab-btn on" data-tab="unidades" role="tab">Unidades</button>
+        <button class="tab-btn" data-tab="empreendimentos" role="tab">Empreendimentos</button>
+        <button class="tab-btn" data-tab="leads" role="tab">Leads <span id="leadsBadge"></span></button>
+      </div>
+
+      <!-- ---------- UNIDADES ---------- -->
+      <div class="tab-pane" id="tab-unidades">
+        <div class="admin-grid">
+          <div class="painel">
+            <h2>Unidades cadastradas <span class="admin-user" id="contaUni"></span></h2>
+            <div class="tabela-wrap">
+              <table class="tabela">
+                <thead><tr>
+                  <th></th><th>Título</th><th>Empreendimento</th><th class="num">Preço</th>
+                  <th>Situação</th><th></th>
+                </tr></thead>
+                <tbody id="listaUnidades"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <form class="painel admin-form" id="formUnidade">
+            <h2 id="tituloFormUni">Nova unidade</h2>
+
+            <div class="field">
+              <label for="uTitulo">Título *</label>
+              <input id="uTitulo" required placeholder="Casa 03 — Residencial Aurora" />
+            </div>
+
+            <div class="linha-2">
+              <div class="field">
+                <label for="uEmp">Empreendimento</label>
+                <select id="uEmp"><option value="">Sem empreendimento</option></select>
+              </div>
+              <div class="field">
+                <label for="uTipo">Tipo</label>
+                <select id="uTipo">
+                  <option value="casa">Casa</option>
+                  <option value="apartamento">Apartamento</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="linha-2">
+              <div class="field">
+                <label for="uPreco">Preço (R$)</label>
+                <input id="uPreco" type="number" min="0" step="1000" placeholder="890000" />
+              </div>
+              <div class="field">
+                <label for="uArea">Área (m²)</label>
+                <input id="uArea" type="number" min="0" step="0.01" placeholder="178" />
+              </div>
+            </div>
+
+            <div class="linha-2">
+              <div class="field">
+                <label for="uQuartos">Quartos</label>
+                <input id="uQuartos" type="number" min="0" step="1" value="0" />
+              </div>
+              <div class="field">
+                <label for="uSuites">Suítes</label>
+                <input id="uSuites" type="number" min="0" step="1" value="0" />
+              </div>
+            </div>
+
+            <div class="linha-2">
+              <div class="field">
+                <label for="uBanheiros">Banheiros</label>
+                <input id="uBanheiros" type="number" min="0" step="1" value="0" />
+              </div>
+              <div class="field">
+                <label for="uVagas">Vagas</label>
+                <input id="uVagas" type="number" min="0" step="1" value="0" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="uStatus">Situação</label>
+              <select id="uStatus">
+                <option value="disponivel">Disponível</option>
+                <option value="reservado">Reservado</option>
+                <option value="vendido">Vendido</option>
+              </select>
+            </div>
+
+            <label class="check">
+              <input type="checkbox" id="uDestaque" />
+              Mostrar em destaque na página inicial
+            </label>
+
+            <div class="field">
+              <label for="uDescricao">Descrição</label>
+              <textarea id="uDescricao" rows="4" placeholder="Suíte master com closet, varanda gourmet..."></textarea>
+            </div>
+
+            <div class="field">
+              <label>Fotos</label>
+              <div class="dropzone" id="dropUni">
+                <b>Clique ou arraste as fotos aqui</b>
+                Reduzimos para 1600px de largura em JPEG antes de enviar.
+              </div>
+              <input type="file" id="fileUni" accept="image/*" multiple hidden />
+              <div class="fotos-grid" id="fotosUni"></div>
+              <p class="progresso" id="progressoUni" hidden></p>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-block" id="salvarUni">Salvar unidade</button>
+            <button type="button" class="btn-limpar" id="cancelarUni" hidden>Cancelar edição</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ---------- EMPREENDIMENTOS ---------- -->
+      <div class="tab-pane" id="tab-empreendimentos" hidden>
+        <div class="admin-grid">
+          <div class="painel">
+            <h2>Empreendimentos <span class="admin-user" id="contaEmp"></span></h2>
+            <div class="tabela-wrap">
+              <table class="tabela">
+                <thead><tr>
+                  <th></th><th>Nome</th><th>Local</th><th>Status</th><th class="num">Unidades</th><th></th>
+                </tr></thead>
+                <tbody id="listaEmps"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <form class="painel admin-form" id="formEmp">
+            <h2 id="tituloFormEmp">Novo empreendimento</h2>
+
+            <div class="field">
+              <label for="eNome">Nome *</label>
+              <input id="eNome" required placeholder="Residencial Aurora" />
+            </div>
+
+            <div class="linha-2">
+              <div class="field">
+                <label for="eBairro">Bairro</label>
+                <input id="eBairro" placeholder="Jardim Europa" />
+              </div>
+              <div class="field">
+                <label for="eCidade">Cidade</label>
+                <input id="eCidade" placeholder="Sua Cidade / UF" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="eStatus">Status da obra</label>
+              <select id="eStatus">
+                <option value="lancamento">Lançamento</option>
+                <option value="em_obras">Em obras</option>
+                <option value="pronto">Pronto para morar</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="eDescricao">Descrição</label>
+              <textarea id="eDescricao" rows="4" placeholder="Condomínio fechado com 14 casas..."></textarea>
+            </div>
+
+            <div class="field">
+              <label>Foto de capa</label>
+              <div class="dropzone" id="dropEmp">
+                <b>Clique ou arraste a capa</b>
+                Uma imagem apenas — a capa do empreendimento.
+              </div>
+              <input type="file" id="fileEmp" accept="image/*" hidden />
+              <div class="fotos-grid" id="fotosEmp"></div>
+              <p class="progresso" id="progressoEmp" hidden></p>
+            </div>
+
+            <button type="submit" class="btn btn-gold btn-block" id="salvarEmp">Salvar empreendimento</button>
+            <button type="button" class="btn-limpar" id="cancelarEmp" hidden>Cancelar edição</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ---------- LEADS ---------- -->
+      <div class="tab-pane" id="tab-leads" hidden>
+        <div class="painel">
+          <h2>Contatos recebidos <span class="admin-user" id="contaLeads"></span></h2>
+          <div class="tabela-wrap">
+            <table class="tabela">
+              <thead><tr>
+                <th>Quando</th><th>Nome</th><th>Contato</th><th>Imóvel</th><th>Mensagem</th>
+              </tr></thead>
+              <tbody id="listaLeads"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="js/supabase-config.js"></script>
+<script src="js/catalogo.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
