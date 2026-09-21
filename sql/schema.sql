@@ -124,6 +124,36 @@ create policy "leads: leitura autenticada"
 -- Sem policy de update/delete em leads: ninguém altera ou apaga pelo site.
 
 -- ============================================================
+--  2b. PRIVILÉGIOS DE TABELA
+--
+--  O RLS decide QUAIS LINHAS cada um enxerga; os privilégios abaixo
+--  decidem se o papel sequer pode tocar na tabela. As duas camadas
+--  precisam liberar.
+--
+--  Isto aqui deixa o script independente da opção "Automatically expose
+--  new tables" que aparece na criação do projeto: com ela ligada ou
+--  desligada, o resultado final é exatamente o mesmo.
+-- ============================================================
+
+grant usage on schema public to anon, authenticated;
+
+-- zera e reconcede, para o resultado não depender do que veio por padrão
+revoke all on public.empreendimentos from anon, authenticated;
+revoke all on public.unidades        from anon, authenticated;
+revoke all on public.leads           from anon, authenticated;
+
+-- catálogo: visitante lê, equipe escreve
+grant select                         on public.empreendimentos to anon, authenticated;
+grant insert, update, delete         on public.empreendimentos to authenticated;
+
+grant select                         on public.unidades        to anon, authenticated;
+grant insert, update, delete         on public.unidades        to authenticated;
+
+-- leads: visitante só envia, equipe só lê
+grant insert                         on public.leads           to anon, authenticated;
+grant select                         on public.leads           to authenticated;
+
+-- ============================================================
 --  3. STORAGE (fotos dos imóveis)
 --  Bucket público: as fotos aparecem no site sem token.
 --  O upload continua restrito a usuários autenticados.

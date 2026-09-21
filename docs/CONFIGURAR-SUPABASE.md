@@ -35,7 +35,15 @@ Você não precisa saber SQL: é copiar um arquivo e clicar em *Run*.
    | **Region** | `South America (São Paulo)` — é a mais próxima, o site fica mais rápido |
    | **Pricing Plan** | `Free` |
 
-5. Clique em **Create new project** e aguarde. O provisionamento leva de 1 a 3 minutos
+5. Na seção **Security**, dessa mesma tela:
+
+   | Opção | O que fazer |
+   |---|---|
+   | **Enable Data API** | ✅ **marcada** — é por essa API que o site conversa com o banco. Sem ela nada funciona. |
+   | **Automatically expose new tables** | Tanto faz. O `sql/schema.sql` concede os privilégios explicitamente, então funciona das duas formas. Se quiser seguir a recomendação do Supabase, **desmarque**. |
+   | **Enable automatic RLS** | ✅ **marcada** — faz toda tabela nova nascer protegida. |
+
+6. Clique em **Create new project** e aguarde. O provisionamento leva de 1 a 3 minutos
    (aparece uma barra de progresso). Pode deixar a aba aberta.
 
 ---
