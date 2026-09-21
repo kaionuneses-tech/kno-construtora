@@ -76,42 +76,57 @@ lá, vazias.
 ## Passo 3 — Copiar as credenciais para o site
 
 1. No menu lateral, vá em **Project Settings** (a engrenagem, no rodapé do menu).
-2. Clique em **API** — dependendo da versão, pode aparecer como **Data API** ou
-   **API Keys**.
-3. Você vai ver dois valores importantes:
+2. Em **Data API**, copie o **Project URL** — algo como `https://abcdefghijkl.supabase.co`.
+3. Vá em **API Keys**. A tela tem duas abas:
 
-   | Campo na tela | O que é |
+   | Aba | O que tem |
    |---|---|
-   | **Project URL** | algo como `https://abcdefghijkl.supabase.co` |
-   | **anon** / **public** | uma chave bem longa, começando com `eyJ...` |
+   | **Publishable and secret API keys** | o sistema atual. É esta que você usa. |
+   | **Legacy anon, service_role API keys** | o sistema antigo, que o Supabase vai aposentar no fim de 2026. Ignore. |
 
-4. Abra o arquivo **`js/supabase-config.js`** no Bloco de Notas. As duas primeiras
+4. Na primeira aba, seção **Publishable key**, copie a chave chamada `default` —
+   ela começa com **`sb_publishable_`**. É o botão de copiar ao lado dela.
+
+   ⚠️ Logo abaixo tem a seção **Secret keys** (`sb_secret_...`). **Não é essa.**
+   Aquela chave ignora todas as regras de segurança e daria acesso total ao seu banco
+   para qualquer pessoa que visse o código do site.
+
+5. Abra o arquivo **`js/supabase-config.js`** no Bloco de Notas. As duas primeiras
    linhas de código são estas:
 
    ```js
    window.KNO_SUPABASE_URL = "https://SEU-PROJETO.supabase.co";
-   window.KNO_SUPABASE_ANON_KEY = "SUA-CHAVE-ANON-AQUI";
+   window.KNO_SUPABASE_KEY = "SUA-CHAVE-PUBLISHABLE-AQUI";
    ```
 
-5. Substitua os dois valores pelos do seu projeto, **mantendo as aspas e o ponto e
+6. Substitua os dois valores pelos do seu projeto, **mantendo as aspas e o ponto e
    vírgula**. Deve ficar parecido com:
 
    ```js
    window.KNO_SUPABASE_URL = "https://abcdefghijkl.supabase.co";
-   window.KNO_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3M...";
+   window.KNO_SUPABASE_KEY = "sb_publishable_TbMkoytCbIEWatMl0r6_Og_1FTx9...";
    ```
 
-6. Salve o arquivo.
+7. Salve o arquivo.
 
 ### Sobre a chave ser "pública"
 
-A chave **anon** aparece no código do site e qualquer pessoa consegue vê-la — isso é
-esperado e não é uma falha. Ela só permite fazer aquilo que as regras de RLS liberam:
-ler o catálogo e enviar um contato. Não dá para alterar imóveis nem ler os leads com ela.
+A chave **publishable** aparece no código do site e qualquer pessoa consegue vê-la —
+isso é esperado, não é falha. Nas palavras da própria documentação do Supabase:
+*"Anyone can read it, so it only reaches what Row Level Security allows"*. Ou seja, ela
+só faz o que as regras do `schema.sql` liberam: ler o catálogo e enviar um contato.
+Não dá para alterar imóveis nem ler os leads com ela.
 
-Na mesma tela existe uma segunda chave, a **`service_role`** (às vezes chamada de
-*secret*). Essa ignora todas as regras de segurança. **Nunca** coloque essa chave no
-site, em e-mail, em print ou no GitHub.
+Por garantia, o `js/supabase-config.js` **se recusa a funcionar** se detectar que você
+colou por engano uma chave secreta (`sb_secret_...` ou a legada `service_role`) — em vez
+de conectar, ele mostra um aviso vermelho no site. Se isso acontecer com uma chave que
+já foi publicada em algum lugar, gere uma nova no painel do Supabase.
+
+### Não clique em "Disable JWT-based API keys"
+
+Esse botão, na aba das chaves legadas, desliga o sistema antigo. Não mexa nele agora —
+deixe para depois que o site estiver funcionando, se é que você vai querer mexer.
+Nada no site depende das chaves legadas.
 
 ---
 
