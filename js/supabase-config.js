@@ -35,8 +35,13 @@ window.KNO_BUCKET = "imoveis";
 (function (global) {
   "use strict";
 
-  var url = global.KNO_SUPABASE_URL || "";
-  var key = global.KNO_SUPABASE_KEY || global.KNO_SUPABASE_ANON_KEY || "";
+  // Aceita tanto a "Project URL" quanto a "API URL" que aparece em Data API
+  // (esta vem com /rest/v1/ no fim). A supabase-js monta esses caminhos sozinha.
+  var url = String(global.KNO_SUPABASE_URL || "").trim()
+    .replace(/\/(rest|auth|storage|realtime)\/v\d+\/?$/i, "")
+    .replace(/\/+$/, "");
+
+  var key = String(global.KNO_SUPABASE_KEY || global.KNO_SUPABASE_ANON_KEY || "").trim();
 
   var client = null;
   var erro = null;
