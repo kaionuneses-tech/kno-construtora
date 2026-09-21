@@ -24,7 +24,7 @@
    ============================================================ */
 
 window.KNO_SUPABASE_URL = "https://scnocjwrsvfiyrqxxzfj.supabase.co";
-window.KNO_SUPABASE_KEY = "SUA-CHAVE-PUBLISHABLE-AQUI";
+window.KNO_SUPABASE_KEY = "sb_publishable_TbMkoytCbIEWatMl0r6_Og_1FTx91zP";
 
 /* Bucket do Storage onde ficam as fotos (criado pelo sql/schema.sql) */
 window.KNO_BUCKET = "imoveis";
