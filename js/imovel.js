@@ -34,7 +34,7 @@
       unidade = r.data;
       empreendimento = r.data.empreendimentos || null;
       fotos = cat.fotos(unidade);
-      document.title = unidade.titulo + " — KNO Construtora e Incorporadora";
+      document.title = unidade.titulo + " — Enterprise Construções";
       render();
       carregarRelacionados();
     })
@@ -205,7 +205,7 @@
       }).then(function (r) {
         if (r.error) throw r.error;
         form.innerHTML = '<div class="vazio" style="padding:36px 20px"><b>Interesse registrado</b>' +
-          'A equipe da KNO vai entrar em contato em até 1 dia útil.</div>';
+          'A equipe da Enterprise vai entrar em contato em até 1 dia útil.</div>';
         if (window.KNOui) window.KNOui.toast("Interesse enviado com sucesso.", "ok");
       }).catch(function (e) {
         nota.textContent = "Não conseguimos enviar (" + (e.message || e) + "). Tente novamente.";

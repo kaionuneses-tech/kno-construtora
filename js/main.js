@@ -165,7 +165,7 @@
       }).then(function (r) {
         if (r.error) throw r.error;
         form.reset();
-        note.textContent = "Mensagem enviada. A KNO responde em até 1 dia útil.";
+        note.textContent = "Mensagem enviada. A Enterprise responde em até 1 dia útil.";
         note.classList.add("ok");
       }).catch(function (e) {
         note.textContent = "Não conseguimos enviar agora (" + (e.message || e) +

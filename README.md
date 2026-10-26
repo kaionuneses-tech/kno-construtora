@@ -1,6 +1,6 @@
-# KNO — Construtora e Incorporadora
+# Enterprise Construções
 
-Site institucional + catálogo de imóveis da KNO. Site estático (HTML, CSS e JavaScript
+Site institucional + catálogo de imóveis da Enterprise Construções. Site estático (HTML, CSS e JavaScript
 puro, sem build) com uma animação 3D em Three.js dirigida pelo scroll e um painel
 administrativo apoiado no Supabase.
 
@@ -50,4 +50,4 @@ Nenhuma instalação, nenhum build. Tudo por CDN:
 
 ---
 
-© KNO Construtora e Incorporadora. Todos os direitos reservados.
+© Enterprise Construções. Todos os direitos reservados.

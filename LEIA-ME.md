@@ -1,4 +1,4 @@
-# KNO — Construtora e Incorporadora
+# Enterprise Construções
 
 Site institucional com uma animação 3D dirigida pelo scroll (conforme a página desce,
 uma casa é construída do terreno até a entrega das chaves, no estilo das páginas de
@@ -53,7 +53,7 @@ js/imovel.js            galeria + formulário de interesse
 js/admin.js             login, CRUD, upload de fotos e leads
 
 sql/schema.sql          tabelas, índices, RLS e bucket do Storage
-assets/logo.jpg         logo da KNO (cópia de "logo,png.jpeg")
+assets/logo.svg         logo provisória da Enterprise (trocar pela oficial)
 servidor-local.ps1      servidor estático opcional
 ```
 
