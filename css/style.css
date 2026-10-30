@@ -296,7 +296,7 @@ p{margin:0}
 .contact-list{list-style:none;margin:40px 0 0;padding:0;display:grid;gap:22px}
 .contact-list li{display:grid;gap:4px;padding-bottom:20px;border-bottom:1px solid var(--line)}
 .contact-list span{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
-.contact-list a,.contact-list p{font-family:var(--font-d);font-size:17px;color:var(--ink);transition:color .25s}
+.contact-list a,.contact-list p{font-family:var(--font-d);font-size:17px;color:var(--ink);transition:color .25s;overflow-wrap:anywhere}
 .contact-list a:hover{color:var(--gold-2)}
 
 .contact-form{
@@ -329,7 +329,7 @@ p{margin:0}
 .footer-logo{height:52px;width:auto;border-radius:8px;margin-bottom:20px}
 .footer-grid p{color:var(--muted);font-size:14.5px;font-weight:300;max-width:38ch}
 .footer h4{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-2);margin-bottom:18px}
-.footer-grid div a{display:block;color:var(--muted);font-size:14.5px;padding-block:6px;transition:color .25s}
+.footer-grid div a{display:block;color:var(--muted);font-size:14.5px;padding-block:6px;transition:color .25s;overflow-wrap:anywhere}
 .footer-grid div a:hover{color:var(--ink)}
 .footer-bar{
   border-top:1px solid var(--line);padding:22px clamp(20px,4vw,42px);
